@@ -10,7 +10,7 @@
     "url": "https://github.com/myWsq/sys-theme"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
   "devDependencies": {
