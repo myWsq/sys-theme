@@ -13,7 +13,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
     "fs-extra": "^9.0.0"
   }
 }
