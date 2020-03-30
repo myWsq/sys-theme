@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+// Mixes a color with black to create its shade.
+// --------------------------------------------------------------------------------------------
+@function get-color-shade($color) {
+  @return mix(#000, $color, 12%);
+}
+
+// Mixes a color with white to create its tint.
+// --------------------------------------------------------------------------------------------
+@function get-color-tint($color) {
+  @return mix(#fff, $color, 10%);
+}
+
+// Converts a color to a comma separated rgb.
+// --------------------------------------------------------------------------------------------
+@function color-to-rgb-list($color) {
+  @return #{red($color)}, #{green($color)}, #{blue($color)};
+}
+
+// Generate a css variable name with custom prefix
+// --------------------------------------------------------------------------------------------
+@function get-var($name) {
+  @return "--#{$css-variable-prefix}-#{$name}";
+}
+
+// Generate a rgba formatted color with css variable
+@function get-color-with-css-variable($variable, $value, $alpha) {
+  @return rgba(
+    var(#{get-var($variable)}, #{color-to-rgb-list($value)}),
+    $alpha
+  );
+}

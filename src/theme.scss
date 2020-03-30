@@ -1,0 +1,18 @@
+@import "./inject.scss";
+
+:root {
+  @each $key, $value in $colors {
+    @include generate-color($key);
+  }
+  #{get-var(color-background)}: #{color-to-rgb-list($background-color)};
+  @for $i from 50 through 950 {
+    @if $i % 50 == 0 {
+      @include generate-color-step($i);
+    }
+  }
+  #{get-var(color-text)}: #{color-to-rgb-list($text-color)};
+}
+
+@each $key, $value in $colors {
+  @include generate-color-namespace($key);
+}
